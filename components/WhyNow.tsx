@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageWithFallback from './ImageWithFallback';
 import Section from './Section';
 import SectionHeading from './SectionHeading';
 import FadeIn from './FadeIn';
@@ -9,7 +9,7 @@ export default function WhyNow() {
   return (
     <Section id="why" divider narrow>
       <FadeIn>
-        <SectionHeading eyebrow="Why now" accent={TEAL}>
+        <SectionHeading eyebrow="Why now" accent={TEAL} index="01">
           なぜいま、人を探すのか。
         </SectionHeading>
       </FadeIn>
@@ -39,12 +39,15 @@ export default function WhyNow() {
 
         <FadeIn delay={0.1}>
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-hairline">
-            <Image
+            <ImageWithFallback
               src="/images/culture-01.jpg"
               alt="107 Design のチームとこれまでの歩み"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover grayscale"
+              variant="photo"
+              accent={TEAL}
+              label="Team"
             />
           </div>
         </FadeIn>

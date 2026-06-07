@@ -31,7 +31,7 @@ export default function WhatYouDo() {
   return (
     <Section id="work" divider>
       <FadeIn>
-        <SectionHeading eyebrow="What you'll do" accent={CORAL}>
+        <SectionHeading eyebrow="What you'll do" accent={CORAL} index="03">
           これからやろうとしていること。
         </SectionHeading>
       </FadeIn>

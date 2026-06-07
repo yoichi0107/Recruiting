@@ -23,7 +23,7 @@ export default function Conditions() {
   return (
     <Section id="conditions" divider narrow>
       <FadeIn>
-        <SectionHeading eyebrow="Conditions" accent={TEAL}>
+        <SectionHeading eyebrow="Conditions" accent={TEAL} index="05">
           条件のこと。
         </SectionHeading>
       </FadeIn>

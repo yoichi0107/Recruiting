@@ -26,7 +26,7 @@ export default function Process() {
   return (
     <Section id="process" divider narrow>
       <FadeIn>
-        <SectionHeading eyebrow="Process" accent={PURPLE}>
+        <SectionHeading eyebrow="Process" accent={PURPLE} index="06">
           面接ではなく、お見合いです。
         </SectionHeading>
       </FadeIn>

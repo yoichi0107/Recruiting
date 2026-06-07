@@ -35,7 +35,7 @@ export default function WhoWeLookFor() {
   return (
     <Section id="who" divider narrow>
       <FadeIn>
-        <SectionHeading eyebrow="Who we're looking for" accent={AMBER}>
+        <SectionHeading eyebrow="Who we're looking for" accent={AMBER} index="04">
           こんな人と、話してみたい。
         </SectionHeading>
       </FadeIn>

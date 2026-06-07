@@ -1,7 +1,9 @@
 'use client';
 
-import Image from 'next/image';
+import ImageWithFallback from './ImageWithFallback';
 import { motion, useReducedMotion } from 'framer-motion';
+
+const AMBER = '#D97706';
 
 /**
  * Full-viewport, quiet first view. Background photo (hero-main.jpg)
@@ -18,16 +20,28 @@ export default function Hero() {
     >
       {/* Background image (optional). alt empty: decorative. */}
       <div className="absolute inset-0">
-        <Image
+        <ImageWithFallback
           src="/images/hero-main.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
           className="object-cover opacity-[0.16]"
+          variant="hero"
         />
         {/* off-white wash for legibility */}
         <div className="absolute inset-0 bg-paper/40" />
+      </div>
+
+      {/* Decorative layer: quiet hairline grid + an oversized faint mark.
+          Always present, so the hero reads as designed even without a photo. */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute inset-y-0 left-1/2 w-px bg-hairline/60" />
+        <div className="absolute inset-y-0 left-[16.66%] hidden w-px bg-hairline/40 md:block" />
+        <div className="absolute inset-y-0 right-[16.66%] hidden w-px bg-hairline/40 md:block" />
+        <span className="absolute -right-6 bottom-[-3rem] select-none font-display text-[28vw] font-medium leading-none tracking-tighter text-ink/[0.035] md:text-[20vw]">
+          107
+        </span>
       </div>
 
       <div className="relative mx-auto w-full max-w-content px-6 sm:px-8">
@@ -37,9 +51,16 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl"
         >
-          <p className="mb-8 font-display text-sm tracking-wider text-ink-sub">
-            107 Design — Open Position
-          </p>
+          <div className="mb-8 flex items-center gap-3">
+            <span
+              className="block h-px w-10"
+              style={{ backgroundColor: AMBER }}
+              aria-hidden="true"
+            />
+            <p className="font-display text-sm tracking-wider text-ink-sub">
+              107 Design — Open Position
+            </p>
+          </div>
           <h1 className="text-[2.4rem] font-medium leading-[1.25] tracking-wide text-ink sm:text-5xl md:text-[3.5rem] md:leading-[1.2]">
             オープンポジション、
             <br />

@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import ImageWithFallback from './ImageWithFallback';
 import { useEffect, useState } from 'react';
 
 /**
@@ -28,13 +28,14 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 sm:px-8">
         <a href="#top" className="flex items-center" aria-label="107 Design">
-          <Image
+          <ImageWithFallback
             src="/images/107design-logo.png"
             alt="107 Design"
             width={120}
             height={28}
             className="h-6 w-auto"
             priority
+            variant="logo"
           />
         </a>
         <a

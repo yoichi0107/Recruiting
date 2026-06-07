@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageWithFallback from './ImageWithFallback';
 import Section from './Section';
 import SectionHeading from './SectionHeading';
 import FadeIn from './FadeIn';
@@ -16,7 +16,7 @@ export default function About() {
   return (
     <Section id="about" divider narrow>
       <FadeIn>
-        <SectionHeading eyebrow="About" accent={PURPLE}>
+        <SectionHeading eyebrow="About" accent={PURPLE} index="02">
           107 Designは、企画会社です。
         </SectionHeading>
       </FadeIn>
@@ -39,12 +39,15 @@ export default function About() {
 
         <FadeIn delay={0.1}>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-hairline">
-            <Image
+            <ImageWithFallback
               src="/images/company-overview.jpg"
               alt="107 Design のオフィスと働き方の雰囲気"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
               className="object-cover grayscale"
+              variant="photo"
+              accent={PURPLE}
+              label="Office"
             />
           </div>
         </FadeIn>

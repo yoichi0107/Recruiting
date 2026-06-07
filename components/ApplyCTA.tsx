@@ -39,7 +39,7 @@ export default function ApplyCTA() {
   return (
     <Section id="apply" divider narrow>
       <FadeIn>
-        <SectionHeading eyebrow="Apply" accent={AMBER}>
+        <SectionHeading eyebrow="Apply" accent={AMBER} index="08">
           応募する。
         </SectionHeading>
       </FadeIn>

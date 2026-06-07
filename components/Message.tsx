@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageWithFallback from './ImageWithFallback';
 import Section from './Section';
 import SectionHeading from './SectionHeading';
 import FadeIn from './FadeIn';
@@ -9,7 +9,7 @@ export default function Message() {
   return (
     <Section id="message" divider narrow>
       <FadeIn>
-        <SectionHeading eyebrow="Message" accent={CORAL}>
+        <SectionHeading eyebrow="Message" accent={CORAL} index="07">
           代表から、ひとこと。
         </SectionHeading>
       </FadeIn>
@@ -17,12 +17,15 @@ export default function Message() {
       <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <FadeIn>
           <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-sm bg-hairline md:mx-0">
-            <Image
+            <ImageWithFallback
               src="/images/nishikawa-portrait.jpg"
               alt="107 Design 代表 西川"
               fill
               sizes="(max-width: 768px) 80vw, 30vw"
               className="object-cover grayscale"
+              variant="photo"
+              accent={CORAL}
+              label="Portrait"
             />
           </div>
         </FadeIn>
