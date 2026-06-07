@@ -47,7 +47,7 @@ export default function Process() {
       <ol className="grid gap-px overflow-hidden rounded-sm border border-hairline bg-hairline sm:grid-cols-3">
         {steps.map((step, i) => (
           <FadeIn key={step.n} delay={i * 0.06} className="h-full">
-            <li className="flex h-full flex-col bg-base p-8">
+            <li className="flex h-full flex-col bg-paper p-8">
               <span
                 className="mb-5 font-display text-sm tracking-wider"
                 style={{ color: PURPLE }}

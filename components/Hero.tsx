@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-base"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-paper"
     >
       {/* Background image (optional). alt empty: decorative. */}
       <div className="absolute inset-0">
@@ -27,7 +27,7 @@ export default function Hero() {
           className="object-cover opacity-[0.16]"
         />
         {/* off-white wash for legibility */}
-        <div className="absolute inset-0 bg-base/40" />
+        <div className="absolute inset-0 bg-paper/40" />
       </div>
 
       <div className="relative mx-auto w-full max-w-content px-6 sm:px-8">

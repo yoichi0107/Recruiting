@@ -246,7 +246,7 @@ export default function ApplyForm() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="inline-flex items-center justify-center rounded-sm bg-ink px-10 py-4 text-sm font-medium tracking-wider text-base transition-colors hover:bg-amber disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex items-center justify-center rounded-sm bg-ink px-10 py-4 text-sm font-medium tracking-wider text-paper transition-colors hover:bg-amber disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === 'submitting' ? '送信中…' : '送る'}
             </button>

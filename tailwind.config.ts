@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: '#FAFAF7',
+        paper: '#FAFAF7',
         ink: '#1A1A1A',
         'ink-sub': '#5C5C5C',
         hairline: '#E5E3DC',

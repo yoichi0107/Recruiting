@@ -47,7 +47,7 @@ export default function WhatYouDo() {
       <div className="grid gap-px overflow-hidden rounded-sm border border-hairline bg-hairline sm:grid-cols-2">
         {cards.map((card, i) => (
           <FadeIn key={card.title} delay={i * 0.06} className="h-full">
-            <article className="flex h-full flex-col bg-base p-8 md:p-10">
+            <article className="flex h-full flex-col bg-paper p-8 md:p-10">
               <span
                 className="mb-6 block h-px w-10"
                 style={{ backgroundColor: card.accent }}
