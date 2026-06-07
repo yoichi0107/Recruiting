@@ -32,3 +32,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# culture deck LP — source PDF is confidential, do not commit
+*.pdf
+extract_images.py
+gen_assets.py
+assets/images/extracted/
