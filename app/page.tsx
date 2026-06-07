@@ -7,7 +7,7 @@ import WhoWeLookFor from '@/components/WhoWeLookFor';
 import Conditions from '@/components/Conditions';
 import Process from '@/components/Process';
 import Message from '@/components/Message';
-import ApplyForm from '@/components/ApplyForm';
+import ApplyCTA from '@/components/ApplyCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
         <Conditions />
         <Process />
         <Message />
-        <ApplyForm />
+        <ApplyCTA />
       </main>
       <Footer />
     </>
