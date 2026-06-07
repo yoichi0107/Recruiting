@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Culture Deck LP to GitHub Pages
 
 on:
   push:
@@ -21,17 +21,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+      - name: Assemble static site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp .nojekyll _site/
+          cp -r assets _site/
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
+      # 安全弁: 機密の Culture Deck PDF など、PDF が成果物に混入していたら公開を中止する
+      - name: Guard — ensure no PDF is published
+        run: |
+          if find _site -iname '*.pdf' | grep -q .; then
+            echo "::error::PDF file found in deploy artifact. Aborting (Culture Deck PDF must not be published)."
+            exit 1
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -43,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./_site
 
   deploy:
     needs: build
