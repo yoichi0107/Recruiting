@@ -1,0 +1,15 @@
+{
+  "name": "monkey-test",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Gremlins.js を使った Playwright モンキーテスト + エラーロガー",
+  "scripts": {
+    "test": "node monkey-test.mjs",
+    "test:headed": "HEADLESS=false node monkey-test.mjs",
+    "postinstall": "echo 'ブラウザ未取得の場合は npx playwright install chromium を実行してください'"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}
